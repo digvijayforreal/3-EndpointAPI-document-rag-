@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document RAG Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+
+<body>
+    <div class="layout">
+
+        <aside class="sidebar">
+            <h2>Document RAG</h2>
+            <p class="muted">AI Document Intelligence</p>
+
+            <h3>Upload Document</h3>
+            <input type="file" id="fileInput" accept=".pdf,.docx">
+            <button id="uploadBtn">Upload & Chunk</button>
+
+            <h3>Your Documents</h3>
+            <select id="documentSelect">
+                <option value="">Select document</option>
+            </select>
+
+            <p id="documentStatus" class="muted"></p>
+
+            <button id="embedBtn">Generate Embeddings</button>
+            <button id="clearBtn" class="secondary">Clear Chat</button>
+
+            <p id="statusMessage" class="muted"></p>
+        </aside>
+
+        <main class="main">
+            <header>
+                <div>
+                    <h1>Document AI Assistant</h1>
+                    <p class="muted">Ask questions about your PDF and DOCX files</p>
+                </div>
+                <span class="pill">FastAPI + RAG</span>
+            </header>
+
+            <section id="chatMessages" class="messages">
+                <div class="welcome">
+                    <h2>Ask your documents anything</h2>
+                    <p>Select an embedded document to begin.</p>
+                </div>
+            </section>
+
+            <form id="chatForm" class="chat-form">
+                <input
+                    id="questionInput"
+                    placeholder="Ask a question about your document..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="askBtn">Send</button>
+            </form>
+        </main>
+
+    </div>
+</body>
+</html>
